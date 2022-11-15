@@ -1,28 +1,17 @@
 input.onButtonPressed(Button.A, function () {
-    music.playMelody("E B C5 A B G A F ", 120)
+    basic.showIcon(IconNames.Yes)
+    music.startMelody(music.builtInMelody(Melodies.Funk), MelodyOptions.Once)
+    basic.clearScreen()
 })
-input.onSound(DetectedSound.Loud, function () {
-    basic.showLeds(`
-        . # # # #
-        . . . . #
-        . . # # #
-        . . . . .
-        . . # . .
-        `)
-    basic.showIcon(IconNames.Chessboard)
-    basic.showLeds(`
-        . # # # #
-        . . . . #
-        . . # # #
-        . . . . .
-        . . # . .
-        `)
-    basic.showIcon(IconNames.Chessboard)
-    basic.pause(10000)
+input.onButtonPressed(Button.B, function () {
+    basic.showIcon(IconNames.Yes)
+    music.startMelody(music.builtInMelody(Melodies.Birthday), MelodyOptions.Once)
     basic.clearScreen()
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function () {
+    basic.showIcon(IconNames.Yes)
     music.startMelody(music.builtInMelody(Melodies.Dadadadum), MelodyOptions.Once)
+    basic.clearScreen()
 })
 basic.showIcon(IconNames.SmallDiamond)
 music.playTone(131, music.beat(BeatFraction.Whole))
